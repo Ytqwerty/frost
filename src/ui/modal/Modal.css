@@ -1,0 +1,123 @@
+.active_modal {
+    width: 100vw;
+    height: 100vh;
+    background:rgba(0,0,0,0.4);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    left:0;
+    top: 0;
+}
+.modal {
+    display: none;
+}
+.modal_content {
+    width: 600px;
+    padding: 65px 50px 43px 50px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+.creation {
+    font-size: 30px;
+    line-height: 41px;
+    font-weight: 400;
+    color:#000000;
+    margin-bottom: 46px;
+}
+.fullname {
+    display: flex;
+    justify-content: space-between;
+}
+.modal_content input {
+    font-weight: 400;
+    font-size: 18px;
+    background: #F6F6F6;
+    border: 1px solid #D3D3D3;
+    margin-bottom: 25px;
+    padding: 9px 0 9px 19px;
+    color: #4B4B4B;
+}
+.m46 {
+    margin-bottom: 46px!important;
+}
+.sign_in {
+    align-self: center;
+    margin-top: 18px;
+    font-size: 18px;
+    line-height: 25px;
+    color:#989898;
+    font-weight: 400;
+}
+.modal_sign {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+    color: #000000;
+}
+.address {
+    margin-top: 46px;
+}
+.password {
+    margin-bottom: 15px!important;
+}
+.forgot_password {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #2156BD;
+    align-self: end;
+    margin-bottom: 139px;
+}
+.recovery {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 41px;
+    color:#000000;
+    margin-bottom: 49px;
+}
+.recovery_address {
+    margin-top: 24px;
+    margin-bottom: 71px;
+}
+.modal_product_compressor {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 30px;
+    color:#000000;
+    margin-bottom: 46px;
+}
+.modal_product_sum {
+    display: flex;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color:#4B4B4B;
+    margin-bottom: 18px;
+}
+.sum {
+    margin-right: 59px;
+    align-self: center;
+}
+.modal_count {
+    display: flex;
+}
+.modal_product_minus {
+    font-size: 36px;
+    line-height: 49px;
+    font-weight: 400;
+    color: #4B4B4B;
+    margin-right: 20px;
+}
+.count {
+    background: #F6F6F6;
+    border: 1px solid #D3D3D3;
+    align-self: center;
+    width: 60px;
+    height: 40px;
+    padding: 6px 22px;
+    margin-right: 20px;
+}
+

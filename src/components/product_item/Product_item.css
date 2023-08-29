@@ -1,0 +1,43 @@
+.Product_item {
+    padding: 27px 31px 30px 41px;
+    width: 370px;
+    background: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.Product_item_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Compressor {
+    margin-bottom: 28px;
+    cursor: pointer;
+}
+
+.Compressor_description {
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #000000;
+    height: 80px;
+    cursor:pointer;
+}
+.Price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Compressor_price {
+    font-size: 24px;
+    color: #000000;
+    margin-right: 5px;
+}
+.product_list_link {
+    text-decoration: none;
+}
+.Compressor_description:hover {
+    color:#9A9A9A;
+    text-decoration: underline;
+}

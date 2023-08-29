@@ -1,0 +1,34 @@
+.Header_compressor {
+    background: linear-gradient(180deg, #0E1935 0%, rgba(0, 0, 0, 0.45) 100%);
+    cursor: context-menu;
+}
+
+.Header_compressor_container {
+    width: 1170px;
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+}
+
+.compressor_car {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 54px;
+    color: #FFFFFF;
+}
+
+.compressor_description {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 54px;
+    margin-top: 84px;
+    margin-bottom: 100px;
+}
+
+.header_compressor_logo {
+    position: absolute;
+    top: 52px;
+    left: 650px;
+}

@@ -1,0 +1,53 @@
+.basket_item {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #D3D3D3;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.basket_item_product {
+    display: flex;
+    justify-content: space-between;
+}
+
+.basket_item_delete {
+    cursor: pointer;
+    text-decoration-line: underline;
+    color: #2156BD;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+.basket_item_price {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.basket_count {
+    display: flex;
+
+}
+
+.basket_item_article {
+    display: flex;
+    margin-top: 20px;
+}
+
+.basket_item_count {
+    margin: 0 15px;
+}
+
+.article {
+    font-weight: 400;
+    font-size: 16px;
+    color: #7A7A7A;
+    margin-right: 20px;
+}

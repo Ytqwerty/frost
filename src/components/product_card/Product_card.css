@@ -1,0 +1,235 @@
+.product_card_container {
+    margin: 0 auto;
+    width: 1170px;
+    display: flex;
+    margin-top: 58px;
+    margin-bottom: 96px;
+}
+
+.product_card_name {
+    margin-top: 25px;
+    border: 1px solid #E5E5E5;
+    padding: 38px 29px 50px 30px;
+}
+
+.product_card_compressor_details {
+    display: flex;
+    width: 400px;
+    margin-top: 10px;
+    margin-bottom: 37px;
+}
+
+.product_card_main_compressor {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    background: #FFFFFF;
+    border: 2px solid #E5E5E5;
+    padding: 71px 12px 39px 18px;
+}
+
+.main_compressor {
+    height: 290px;
+    width: 370px;
+}
+
+.compressor_detail {
+    height: 90px;
+    width: 90px;
+    margin-right: 13px;
+    border: 2px solid #E5E5E5;
+    background: #FFFFFF;
+}
+
+.product_card_machine_list {
+    width: 400px;
+    padding: 17px 96px 25px 27px;
+    background: #F4F4F4;
+    border: 1px solid #E5E5E5;
+}
+
+.product_card_buy {
+    margin-left: 30px;
+    width: 270px;
+    height: 255px;
+    background: #EDEDED;
+    padding: 40px 40px 25px 30px;
+    margin-top: 20px;
+}
+
+.product_card_left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 60px;
+}
+
+.product_card_machine_name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #7A7A7A;
+}
+
+.active_machine_Name {
+    margin-bottom: 13px;
+}
+
+.machine_Name::before {
+    content: '+';
+    margin-right: 8px;
+    color: #4F74BD;
+}
+
+.active_machine_Name::before {
+    content: '-';
+    margin-right: 8px;
+    color: #4F74BD;
+}
+
+.machine_List {
+    display: none;
+    visibility: hidden;
+}
+
+.active_machine_List {
+    font-weight: 400;
+    display: block;
+    visibility: visible;
+}
+
+.machine_Model {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.active_machine_Model {
+    margin-left: 14px;
+    margin-bottom: 10px;
+}
+
+.machine_Model::before {
+    content: '+';
+    margin-right: 8px;
+    color: #4F74BD;
+}
+
+.active_machine_Model::before {
+    content: '-';
+    margin-right: 8px;
+    color: #4F74BD
+}
+
+.machine_Kind {
+    display: none;
+    visibility: hidden;
+}
+
+.active_machine_Kind {
+    margin-left: 31px;
+    margin-bottom: 10px;
+    display: block;
+    visibility: visible;
+}
+
+.product_card_right_name {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 145%;
+    margin-bottom: 33px;
+}
+
+.product_card_article {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 145%;
+    margin-bottom: 20px;
+    color: #7A7A7A;
+}
+
+.product_card_right_description {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 120px;
+}
+
+.left_machine {
+    margin-bottom: 11px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #7A7A7A;
+}
+
+.product_card_description {
+    max-width: 390px;
+}
+
+.product_card_price {
+    font-weight: 600;
+    font-size: 36px;
+    color: black;
+    margin-bottom: 8px;
+}
+
+.product_card_city {
+    font-weight: 400;
+    font-size: 16px;
+    color: #7A7A7A;
+    margin-left: 30px;
+}
+
+.product_card_city_almaty {
+    margin-bottom: 20px;
+}
+
+.green_check {
+    display: flex;
+    margin-bottom: 3px;
+}
+
+.green_check img {
+    margin-right: 8px;
+}
+
+.green_check div {
+    font-weight: 600;
+    font-size: 18px;
+    color: #000000;
+}
+
+.product_card_review {
+    font-weight: 600;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 14px;
+}
+
+.product_card_site {
+    display: flex;
+    font-weight: 600;
+    font-size: 18px;
+    color: #7A7A7A;
+    margin-bottom: 5px;
+}
+
+.product_card_site_button {
+    color: #2156BD;
+    margin-left: 5px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.product_card_client {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 110%;
+    margin-bottom: 20px;
+}
+
+.notReview {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 110%;
+    margin-top: 20px;
+}

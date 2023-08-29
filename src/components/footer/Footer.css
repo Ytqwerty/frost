@@ -1,0 +1,51 @@
+.footer {
+    min-height: 130px;
+    background: #1E1E1E;
+    display: flex;
+    font-weight: 600;
+    font-size: 16px;
+    align-items: center;
+}
+
+.footer_insta, .footer_mail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.footer_insta-name {
+    margin-left: 17px;
+}
+
+.footer_mail-name {
+    margin-left: 14px;
+}
+
+.footer_city-phone {
+    display: flex;
+    align-items: center;
+}
+
+.footer_phone-city {
+    margin-left: 7px;
+}
+
+.footer_city {
+    color: white;
+}
+
+.footer_phone {
+    color: #ffffff;
+}
+
+:where(.footer_insta-name,.footer_mail-name,.footer_phone):hover {
+    text-decoration: underline white;
+    cursor: pointer;
+}
+.footer img {
+    cursor: pointer;
+}

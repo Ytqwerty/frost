@@ -1,0 +1,12 @@
+.dom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dom input {
+    width: 220px !important;
+}
+
+.Home {
+    margin-right: 20px;
+}

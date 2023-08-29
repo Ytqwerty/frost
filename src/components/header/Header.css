@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+.header{
+    background: #1E1E1E;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 18px;
+}
+.container{
+    display: flex;
+    margin: 0 auto;
+    width: 1170px;
+    justify-content: space-between;
+    align-items: center;
+}
+.authorization{
+    color: #E4E4E4;
+    font-weight: 400;
+    font-size: 16px;
+    cursor:pointer;
+}
+.phone_number div:hover {
+    text-decoration: underline white ;
+    cursor:pointer;
+}
+.authorization div:hover {
+    color: #3d3939;
+}
+.Search {
+    display: flex;
+    cursor: pointer;
+}
+.search{
+    width: 354px;
+    background-color: #474747;
+    border: 1px solid #6A6A6A;
+    color: #989898;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 40px 10px 10px;
+}
+.search_button {
+    background: #474747;
+    color: #989898;
+    border: 1px solid #6A6A6A;
+    border-left: none;
+    padding: 11px 8px 8px 8px;;
+}

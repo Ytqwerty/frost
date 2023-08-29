@@ -1,0 +1,57 @@
+.Pagination {
+    display: flex;
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.pages_container {
+    margin-left: auto;
+    display: flex;
+    cursor: pointer;
+}
+
+.active_page, .page {
+    color: #2C2C2C;
+    border: 2px solid #E5E5E5;
+    padding: 7px 12px 6px 13px;
+    margin-right: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.active_page {
+    background: #2156BD;
+    color: #FFFFFF;
+}
+
+.forward_page, .back_page {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #2C2C2C;
+    border: 2px solid #E5E5E5;
+    padding: 6px 15px 7px 15px;
+    margin-left: 8px;
+}
+
+.back_page img {
+    margin-right: 7px;
+}
+
+.forward_page img {
+    margin-left: 7px;
+}
+
+.back_page {
+    padding: 6px 15px 7px 15px;
+    margin-right: 8px;
+}
+
+.center {
+    font-size: 25px;
+    margin-left: 75px;
+}
+

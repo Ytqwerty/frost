@@ -1,0 +1,61 @@
+.Dropdown {
+    position: relative;
+    width: 350px;
+    height: 35px;
+    cursor: pointer;
+}
+.check {
+    display: flex;
+    align-items: center;
+    background: #D3D3D3 url("img/check.svg") no-repeat right 10px center;
+    border:1px solid #D3D3D3;
+    padding-left:10px;
+    width: 100%;
+    height: 35px;
+}
+.active_check {
+    display: flex;
+    background: #FFFFFF url("img/check.svg") no-repeat right 13px center;
+    border:1px solid #D3D3D3;
+    border-bottom: none;
+    width: 100%;
+    height: 35px;
+    align-items: center;
+    padding-left: 10px;
+}
+.items {
+    visibility: hidden;
+}
+.active_items {
+    background: #FFFFFF;
+    visibility: visible;
+    border-bottom: 1px solid #EFEFEF;
+    z-index: 1;
+}
+.items,.active_items {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+}
+.active_items div {
+    position: relative;
+    width: 350px;
+    border: #D3D3D3 1px solid;
+    display:flex;
+    align-items: center;
+    padding-left: 10px;
+    border-top:none;
+    text-decoration: none;
+    color: black;
+}
+.active_items div:first-child {
+    border-top:#D3D3D3 1px solid;
+}
+.active_name {
+    background:#2156BD ;
+    height: 35px;
+}
+.name {
+    height: 35px;
+}

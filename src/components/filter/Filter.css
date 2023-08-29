@@ -1,0 +1,49 @@
+.filter {
+    padding-top: 30px;
+    margin-bottom: 29px;
+    background: #f3f3f3;
+}
+
+.filter_container {
+    display: flex;
+    width: 1170px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+    background: white;
+    border: 2px solid #E5E5E5;
+    padding: 60px 155px 60px 70px;
+}
+
+.filter_header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filter_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 171px;
+}
+
+.filter_text {
+    margin-bottom: 6px;
+    color: #000000;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: context-menu;
+}
+
+.filter_checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.footer_ml {
+    margin-left: 12px;
+}
