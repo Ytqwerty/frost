@@ -13,7 +13,7 @@ function Delivery() {
                 <div className='contact_input'>
                     <div className='contact_left'>
                         <div>Область</div>
-                        <Input placeholder='Акмолинская область'/>
+                        <Input/>
                         <div>Город или поселок</div>
                         <Input/>
                     </div>
@@ -33,7 +33,7 @@ function Delivery() {
                     </div>
                 </div>
             </div>
-            <div className='basket_button'><Button text='Оформить заказ'/></div>
+            <div className='basket_button'><Button classname = 'Button' text='Оформить заказ'/></div>
         </div>
     )
 }

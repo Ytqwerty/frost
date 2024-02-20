@@ -7,8 +7,8 @@ import {Link} from "react-router-dom";
 
 
 function Product_item(props) {
-
     const [modalproduct, setModalproduct] = useState(false)
+
     return (
         <div className='Product_item'>
             <Modal_product open={modalproduct} setOpen={setModalproduct} product = {props.product}/>
@@ -23,7 +23,7 @@ function Product_item(props) {
                 </Link>
                 <div className='Price'>
                     <div className='Compressor_price'>{props.product.price}</div>
-                    <Button text='Купить' onClick={function () {
+                    <Button classname = {'Button'} text='Купить' onClick={function () {
                         setModalproduct(true)
                     }}/>
                 </div>

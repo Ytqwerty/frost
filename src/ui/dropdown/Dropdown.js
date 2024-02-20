@@ -11,7 +11,6 @@ function Dropdown(props) {
     useEffect(function () {
         setName(props.name)
         setElements(props.elements)
-        if (props.click !== undefined) props.click(0)
     }, [props.elements])
     //
     useEffect(function () {

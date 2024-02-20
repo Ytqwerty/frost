@@ -9,15 +9,16 @@ function Filter(props) {
     const [brands, setBrands] = useState([]);
     const [models, setModels] = useState([]);
     const [generation, setGeneration] = useState([])
+
     useEffect(function () {
+        // axios
+        //     .get('https://frost.runtime.kz/api/categories')
+        //     .then(response => {
+        //         let data = response.data;
+        //         setCategories(data);
+        //     });
         axios
-            .get('http://frost.runtime.kz/categories')
-            .then(response => {
-                let data = response.data;
-                setCategories(data);
-            });
-        axios
-            .get('http://frost.runtime.kz/brands')
+            .get('https://frost.runtime.kz/api/brands')
             .then(response => {
                 let data = response.data;
                 setBrands(data)
@@ -26,7 +27,7 @@ function Filter(props) {
 
     function click_brands(id) {
         axios
-            .get('http://frost.runtime.kz/models', {
+            .get('https://frost.runtime.kz/api/models', {
                 params: {
                     brandId: id,
                 }
@@ -34,19 +35,19 @@ function Filter(props) {
             .then(response => {
                 let data = response.data;
                 setModels(data)
-                if (id !== 0) {
-                    props.setBrandId(id)
+                if (id === null) {
+                    props.setBrandId(undefined)
+                    props.setModelId(undefined)
+                    props.setGenerationId(undefined)
                 } else {
-                    props.setBrandId(null)
-                    props.setModelId(null)
-                    props.setGenerationId(null)
+                    props.setBrandId(id)
                 }
             })
     }
 
     function click_models(id) {
         axios
-            .get('http://frost.runtime.kz/generations', {
+            .get('https://frost.runtime.kz/api/generations', {
                 params: {
                     modelId: id,
                 }
@@ -55,19 +56,19 @@ function Filter(props) {
                 let data = response.data;
                 setGeneration(data)
                 if (id !== 0) {
-                    props.setModelId(id)
+                    props.setModelId(undefined)
+                    props.setGenerationId(undefined)
                 } else {
-                    props.setModelId(null)
-                    props.setGenerationId(null)
+                    props.setModelId(id)
                 }
             })
     }
 
     function click_generations(id) {
-        if (id !== 0) {
-            props.setGenerationId(id)
+        if (id === null) {
+            props.setGenerationId(undefined)
         } else {
-            props.setGenerationId(null)
+            props.setGenerationId(id)
         }
     }
 

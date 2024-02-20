@@ -1,14 +1,14 @@
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
-import './Basket.css';
+import './Cart.css';
 import {useState} from "react";
 import Contact_details from "../contact_details/Contact_details";
 import Completion from "../completion/Completion";
 import Delivery from "../delivery/Delivery";
-import BasketProduct from "../basket_product/Basket_product";
+import BasketProduct from "../cart_product/Cart_product";
 
 
-function Basket() {
+function Cart() {
 
 
     const [activeElement, setActiveElement] = useState(0);
@@ -24,7 +24,7 @@ function Basket() {
                 <div className='basket_checkout'>
                     <div className='checkout'>Оформление заказа</div>
                     <div className='basket_header'>
-                        <div className={`basket_buttons ${activeElement === 0 ? "basket_blue_button" : ""}`}
+                        <div className = {`basket_buttons ${activeElement === 0 ? "basket_blue_button" : ""}`}
                              onClick={() => click_Button(0)}>Корзина
                         </div>
                         <div className={`basket_buttons ${activeElement === 1 ? "basket_blue_button" : ""}`}
@@ -49,4 +49,4 @@ function Basket() {
 }
 
 
-export default Basket;
+export default Cart;

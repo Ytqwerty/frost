@@ -8,7 +8,7 @@ function Product_card_review(props) {
     const [modalactive, setModalactive] = useState(false)
 
     useEffect(function () {
-        axios.get('http://frost.runtime.kz/reviews', {
+        axios.get('https://frost.runtime.kz/api/reviews', {
             params: {
                 productId: props.id
             }

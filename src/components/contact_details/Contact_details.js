@@ -31,7 +31,7 @@ function Contact_details() {
                     </div>
                 </div>
             </div>
-            <div className='basket_button'><Button text='Подтвердить'/></div>
+            <div className='basket_button'><Button classname ='Button' text='Подтвердить'/></div>
         </div>
     )
 
