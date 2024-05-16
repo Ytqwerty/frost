@@ -1,0 +1,82 @@
+.order_title {
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+.order_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 265px;
+    width: 100%;
+    max-width: 370px;
+    max-height: 265px;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 60px 40px 40px;
+}
+.order_left div {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27px;
+    text-align: left;
+    color: #1A2749;
+    cursor: pointer;
+}
+.order_right {
+    width: 100%;
+    max-width: 770px;
+    border: 1px solid #E5E5E5;
+    background-color: white;
+    margin-left: 15px;
+    padding: 63px 30px 15px;
+    margin-bottom: 205px;
+}
+.personal_account {
+    font-size: 36px;
+    line-height: 50px;
+    margin-top: 50px;
+}
+.item_id {
+    flex: 0 0 18%;
+}
+.item_name {
+    flex: 0 0 40%;
+}
+.item_date {
+    flex:0 0 21%;
+}
+.item_cost {
+    flex:0 0 11%;
+}
+.order_table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 45px;
+    padding: 0 15px 0 20px;
+}
+.order_item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    border-top: 1px solid #D3D3D3;
+    padding: 21px 0 0;
+}
+.order_h {
+    font-size: 24px;
+    line-height: 33px;
+    font-weight: 500;
+    padding: 0 19px;
+}
+.order_table_header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    color: #383838;
+    margin-bottom: 10px;
+}

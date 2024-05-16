@@ -13,12 +13,30 @@
 .modal {
     display: none;
 }
+.modal_error {
+    color: #b06877;
+    font-size: 17px;
+    line-height: 41px;
+    font-weight: 400;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+.Loading {
+    color:black;
+    font-size: 20px;
+    line-height: 50px;
+    font-weight: 600;
+    margin-top:-40px;
+    margin-bottom: 40px;
+}
 .modal_content {
-    width: 600px;
-    padding: 65px 50px 43px 50px;
     background: #ffffff;
+    padding: 65px 50px 43px 50px;
     display: flex;
+    width: 600px;
     flex-direction: column;
+    color: #4B4B4B!important;
+    font-weight: 400;
 }
 .creation {
     font-size: 30px;
@@ -27,7 +45,7 @@
     color:#000000;
     margin-bottom: 46px;
 }
-.fullname {
+.full_name {
     display: flex;
     justify-content: space-between;
 }
@@ -41,8 +59,9 @@
     color: #4B4B4B;
 }
 .m46 {
-    margin-bottom: 46px!important;
+    margin-bottom: 30px!important;
 }
+
 .sign_in {
     align-self: center;
     margin-top: 18px;
@@ -50,6 +69,10 @@
     line-height: 25px;
     color:#989898;
     font-weight: 400;
+    cursor:pointer;
+}
+.sign_in:hover {
+    text-decoration: underline;
 }
 .modal_sign {
     font-weight: 400;
@@ -61,15 +84,7 @@
     margin-top: 46px;
 }
 .password {
-    margin-bottom: 15px!important;
-}
-.forgot_password {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 25px;
-    color: #2156BD;
-    align-self: end;
-    margin-bottom: 139px;
+    margin-bottom: 100px!important;
 }
 .recovery {
     font-weight: 400;
@@ -120,4 +135,11 @@
     padding: 6px 22px;
     margin-right: 20px;
 }
+.product_authorization {
+    font-size: 18px;
+    line-height: 49px;
+    font-weight: 400;
+    color: #4B4B4B;
+}
+
 

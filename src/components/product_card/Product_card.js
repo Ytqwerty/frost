@@ -22,7 +22,7 @@ function Product_card() {
     const [loading, setLoading] = useState(false)
     useEffect(() => {
         axios
-            .get(`http://frost.runtime.kz/products/${product_id}`)
+            .get(`https://frost.runtime.kz/api/products/${product_id}`)
             .then(response => {
                     setLoading(true);
                     const data = response.data;
@@ -30,7 +30,6 @@ function Product_card() {
             });
         setLoading(false);
     }, [product_id]);
-
 
     if (!loading) {
         return (
@@ -68,7 +67,7 @@ function Product_card() {
                                     <div>г.Алматы</div>
                                     <div>г.Астана</div>
                                 </div>
-                                <Button text='Купить' onClick={function () {
+                                <Button classname={'Button'} text='Купить' onClick={function () {
                                     setModalproduct(true)
                                 }}/>
                             </div>

@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import {BrowserRouter, createBrowserRouter, RouterProvider} from "react-router-dom";
 import Main_page from "./components/main_page/Main_page";
 import Product_card from "./components/product_card/Product_card";
-import Basket from "./components/basket/Basket";
+import Cart from "./components/cart/Cart";
+import {AuthContextProvider} from "./contexts/AuthContext";
+import Delivery from "./components/delivery/Delivery";
+import Orders from "./userAccount/orders/Orders";
 
 const router = createBrowserRouter([
     {
@@ -18,11 +20,17 @@ const router = createBrowserRouter([
     },
     {
         // path:'/user/:login',
-        path: '/basket',
-        element: <Basket/>
+        path: '/cart',
+        element: <Cart/>
+    },
+    {
+        path:'/orders',
+        element:<Orders/>
     }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <RouterProvider router={router}/>
+    <AuthContextProvider>
+        <RouterProvider router={router}/>
+    </AuthContextProvider>
 );

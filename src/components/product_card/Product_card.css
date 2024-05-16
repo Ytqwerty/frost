@@ -68,6 +68,7 @@
     font-size: 16px;
     line-height: 22px;
     color: #7A7A7A;
+    cursor:pointer;
 }
 
 .active_machine_Name {
@@ -78,6 +79,7 @@
     content: '+';
     margin-right: 8px;
     color: #4F74BD;
+    cursor:pointer;
 }
 
 .active_machine_Name::before {
@@ -105,6 +107,7 @@
 .active_machine_Model {
     margin-left: 14px;
     margin-bottom: 10px;
+    cursor:pointer;
 }
 
 .machine_Model::before {
@@ -129,6 +132,7 @@
     margin-bottom: 10px;
     display: block;
     visibility: visible;
+    cursor:pointer;
 }
 
 .product_card_right_name {
@@ -227,9 +231,25 @@
     margin-bottom: 20px;
 }
 
-.notReview {
+.review,.not_review {
     font-weight: 400;
     font-size: 18px;
     line-height: 110%;
+    margin-top: 20px;
+}
+.review {
+    margin-bottom: 20px;
+}
+.Review textarea {
+    width: 100%;
+    resize: none;
+    height: 100px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+}
+.b20 {
     margin-top: 20px;
 }

@@ -6,15 +6,24 @@ import Filter from "../filter/Filter";
 import Pagination from "../../ui/pagination/Pagination";
 
 function Product_list(props) {
+
     const [products, setProducts] = useState([])
+
     const [page, setPage] = useState([]);
+
     const [brandId, setBrandId] = useState(null)
+
     const [modelId, setModelId] = useState(null);
+
     const [generationId, setGenerationId] = useState(null)
-    const [stock, setStock] = useState(false)
+
+    const [loading, setLoading] = useState(true)
+
+    const [stock, setStock] = useState(0)
 
     useEffect(function () {
-        axios.get('http://frost.runtime.kz/products', {
+        setLoading(false)
+        axios.get('https://frost.runtime.kz/api/products', {
             params: {
                 page: 1,
                 size: 6,
@@ -24,20 +33,20 @@ function Product_list(props) {
                 available: stock,
             }
         }).then(function (response) {
+            setLoading(true)
             let data = response.data;
             setPage({currentPage: data.currentPage, totalPages: data.totalPages})
             setProducts(data.items)
         })
     }, [brandId, modelId, generationId, stock]);
-
     function click_Page(page) {
-        axios.get('http://frost.runtime.kz/products', {
+        axios.get('https://frost.runtime.kz/api/products', {
             params: {
                 page: page,
                 size: 6,
-                brandId: brandId,
-                modelId: modelId,
-                generationId: generationId,
+                brandId: brandId === 0 ? null : brandId,
+                modelId: modelId === 0 ? null : modelId,
+                generationId: generationId === 0 ? null : generationId,
                 available: stock,
             }
         }).then(function (response) {
@@ -46,20 +55,25 @@ function Product_list(props) {
             setPage({currentPage: data.currentPage, totalPages: data.totalPages})
         })
     }
+
+
     return (
         <div className='Product_list'>
             <Filter setBrandId={setBrandId} setModelId={setModelId} setGenerationId={setGenerationId}
-                    setStock={setStock}/>
+                    setStock={setStock}
+            />
             <div className='Product_list_container'>
-                {products.map(function (product) {
-                    return (
-                        <div key={product.id}>
-                            <Product_item key={product.id} product={product}/>
-                        </div>
-                    )
-                })}
+                {products.length === 0 ?
+                    <div className='products_loading'>...Loading</div> : products.map(function (product) {
+                        return (
+                            <div key={product.id}>
+                                <Product_item key={product.id} product={product}/>
+                            </div>
+                        )
+                    })}
             </div>
-            <Pagination totalPages={page.totalPages} currentPage={page.currentPage} click={click_Page}/>
+            {!loading ? null :
+                <Pagination totalPages={page.totalPages} currentPage={page.currentPage} click={click_Page}/>}
         </div>
     )
 }

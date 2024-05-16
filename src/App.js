@@ -1,6 +1,6 @@
 import './App.css';
 import Main_page from "./components/main_page/Main_page";
-import Basket from "./components/basket/Basket";
+import Cart from "./components/cart/Cart";
 import Product_card from "./components/product_card/Product_card";
 import Product_list from "./components/product_list/Product_list";
 import Contact_details from "./components/contact_details/Contact_details";
@@ -13,7 +13,7 @@ function App() {
         <div className="App">
             {/*<Filter/>*/}
             {/*<Main_page/>*/}
-            {/*<Basket/>*/}
+            {/*<Cart/>*/}
             {/*<Product_card/>*/}
             {/*<Contact_details/>*/}
             {/*<Delivery/>*/}

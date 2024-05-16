@@ -1,14 +1,26 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import Modal_sign from "../../ui/modal_sign/Modal_sign";
+import {useAuth} from "../../contexts/AuthContext";
+import Button from "../../ui/button/Button";
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
 function Product_card_review(props) {
+
     const [productReview, setProductReview] = useState([])
 
     const [modalactive, setModalactive] = useState(false)
 
+    const {user} = useAuth();
+
+    const [reviewText, setReviewText] = useState('')
+
+    const [review, setReview] = useState(false)
+
+
     useEffect(function () {
-        axios.get('http://frost.runtime.kz/reviews', {
+        axios.get('https://frost.runtime.kz/api/reviews', {
             params: {
                 productId: props.id
             }
@@ -16,16 +28,44 @@ function Product_card_review(props) {
             const data = response.data
             setProductReview(data)
         })
-    }, [props.id])
+        axios.get('https://frost.runtime.kz/api/reviews/exists', {
+            params: {
+                productId: props.id
+            }
+        }).then(function (response) {
+            setReview(response.data)
+        })
+    }, [props.id,productReview])
+
+    function sendReview() {
+        if (review === false) {
+            axios.post('https://frost.runtime.kz/api/reviews', {
+                product_id: props.id,
+                review: reviewText,
+            }).then(function (response) {
+                setReviewText('')
+            }).catch(function (error) {
+            })
+        }
+    }
+
+
     return (
         <div className="Review">
             <Modal_sign open={modalactive} setOpen={setModalactive}/>
             <div className="product_card_review">Отзывы</div>
-            <div className="product_card_site">
+            {!user ? <div className="product_card_site">
                 <div>Чтобы оставить отзыв</div>
                 <div className='product_card_site_button' onClick={() => setModalactive(true)}>войдите на сайт</div>
-            </div>
-            {productReview.length === 0 ? (<div className='notReview'>Отзывов нет. Вы можете оставить отзыв.</div>) :
+            </div> : null}
+            {user && review === false ? <div className='form_review'>
+                <div className='review'>Вы можете оставить свой отзыв, заполнив форму ниже.</div>
+                <textarea value={reviewText}
+                          onChange={(e) => setReviewText(e.target.value)}>''</textarea>
+                <Button classname='Button' text='Отправить' onClick={sendReview}/>
+            </div> : <div className='review'>Вы уже оставили отзыв.</div>}
+            {productReview.length === 0 && !user ? (
+                    <div className='not_review'>Отзывов нет. Вы можете оставить отзыв.</div>) :
                 (productReview.map(function (item, index) {
                     return (
                         <div key={index} className="product_card_name">

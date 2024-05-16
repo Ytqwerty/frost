@@ -9,15 +9,16 @@ function Filter(props) {
     const [brands, setBrands] = useState([]);
     const [models, setModels] = useState([]);
     const [generation, setGeneration] = useState([])
+
     useEffect(function () {
         axios
-            .get('http://frost.runtime.kz/categories')
+            .get('https://frost.runtime.kz/api/categories')
             .then(response => {
                 let data = response.data;
                 setCategories(data);
             });
         axios
-            .get('http://frost.runtime.kz/brands')
+            .get('https://frost.runtime.kz/api/brands')
             .then(response => {
                 let data = response.data;
                 setBrands(data)
@@ -25,49 +26,52 @@ function Filter(props) {
     }, []);
 
     function click_brands(id) {
-        axios
-            .get('http://frost.runtime.kz/models', {
-                params: {
-                    brandId: id,
-                }
-            })
-            .then(response => {
-                let data = response.data;
-                setModels(data)
-                if (id !== 0) {
+        if (id === 0) {
+            setModels([])
+            setGeneration([])
+            props.setBrandId(null)
+            props.setModelId(null)
+            props.setGenerationId(null)
+        } else {
+            axios
+                .get('https://frost.runtime.kz/api/models', {
+                    params: {
+                        brandId: id,
+                    }
+                })
+                .then(response => {
+                    let data = response.data;
+                    setModels(data)
                     props.setBrandId(id)
-                } else {
-                    props.setBrandId(null)
-                    props.setModelId(null)
-                    props.setGenerationId(null)
-                }
-            })
+                })
+        }
     }
 
     function click_models(id) {
-        axios
-            .get('http://frost.runtime.kz/generations', {
-                params: {
-                    modelId: id,
-                }
-            })
-            .then(response => {
-                let data = response.data;
-                setGeneration(data)
-                if (id !== 0) {
+        if (id === 0) {
+            setGeneration([]);
+            props.setModelId(null)
+            props.setGenerationId(null)
+        } else {
+            axios
+                .get('https://frost.runtime.kz/api/generations', {
+                    params: {
+                        modelId: id,
+                    }
+                })
+                .then(response => {
+                    let data = response.data;
+                    setGeneration(data)
                     props.setModelId(id)
-                } else {
-                    props.setModelId(null)
-                    props.setGenerationId(null)
-                }
-            })
+                })
+        }
     }
 
     function click_generations(id) {
-        if (id !== 0) {
-            props.setGenerationId(id)
-        } else {
+        if (id === 0) {
             props.setGenerationId(null)
+        } else {
+            props.setGenerationId(id)
         }
     }
 

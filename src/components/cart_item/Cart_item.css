@@ -30,10 +30,22 @@
     font-size: 18px;
     line-height: 25px;
 }
-
 .basket_count {
+    margin-right: 100px;
     display: flex;
-
+}
+.disable_basket_count {
+    margin-right: 100px;
+    display: flex;
+    background: #9d9999;
+    cursor: auto;
+}
+.plus_minus:hover {
+    color:red;
+}
+.plus_minus {
+    font-size: 25px;
+    cursor:pointer;
 }
 
 .basket_item_article {
@@ -43,6 +55,7 @@
 
 .basket_item_count {
     margin: 0 15px;
+    font-size: 18px;
 }
 
 .article {
