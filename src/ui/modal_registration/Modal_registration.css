@@ -119,6 +119,12 @@
 .modal_count {
     display: flex;
 }
+.stock {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    align-self: center;
+    font-size: 20px;
+}
 .modal_product_minus {
     font-size: 36px;
     line-height: 49px;

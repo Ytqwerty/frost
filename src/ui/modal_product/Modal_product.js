@@ -52,7 +52,6 @@ function Modal_product(props) {
     if (!props.open) {
         return null
     }
-
     return (
         <div className={props.open ? 'active_modal' : 'modal'} onClick={function () {
             props.setOpen(false)
@@ -62,7 +61,7 @@ function Modal_product(props) {
             }}>
                 <div className='recovery'>Товар добавлен в корзину</div>
                 <div className='modal_product_compressor'>{product}</div>
-                <div className='modal_product_sum'>
+                {props.product.available ? <div className='modal_product_sum'>
                     <div className='sum'>Укажите количество:</div>
                     <div className='modal_count'>
                         <div onClick={item_decrease} className='modal_product_minus'>-
@@ -70,10 +69,13 @@ function Modal_product(props) {
                         <div className='count'>{count}</div>
                         <div onClick={item_increase} className='modal_product_minus'>+</div>
                     </div>
-                </div>
-                {user ? <Button classname={loading ? 'loader' : 'Button'} text={!loading ? 'Оформить заказ' : null}
-                                onClick={click_item}/> : <div className = 'product_authorization'>Чтобы добавить товар в корзину необходимо авторизоваться</div>}
-                <div className='sign_in' onClick={()=>props.setOpen(false)}>Продолжить выбор товаров</div>
+                </div> : <div className='stock'>Товара нет в наличии</div>}
+                {user && props.product.available?
+                    <Button classname={loading ? 'loader' : 'Button'} text={!loading ? 'Оформить заказ' : null}
+                            onClick={click_item}/> : null }
+                {!user && props.product.available ? <div className='product_authorization'>Чтобы добавить товар в корзину необходимо
+                        авторизоваться</div> : null}
+                <div className='sign_in' onClick={() => props.setOpen(false)}>Продолжить выбор товаров</div>
             </div>
         </div>
     )

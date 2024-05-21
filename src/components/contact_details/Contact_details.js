@@ -12,7 +12,6 @@ function Contact_details(props) {
 
     const [lastName, setLastName] = useState(user.lastName);
     const [firstName, setFirstName] = useState(user.firstName);
-    const [phone, setPhone] = useState('');
     const [email, setEmail] = useState(user.email);
     const [error, setError] = useState('')
 

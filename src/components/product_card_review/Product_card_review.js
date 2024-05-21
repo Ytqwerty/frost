@@ -49,7 +49,6 @@ function Product_card_review(props) {
         }
     }
 
-
     return (
         <div className="Review">
             <Modal_sign open={modalactive} setOpen={setModalactive}/>
@@ -63,8 +62,9 @@ function Product_card_review(props) {
                 <textarea value={reviewText}
                           onChange={(e) => setReviewText(e.target.value)}>''</textarea>
                 <Button classname='Button' text='Отправить' onClick={sendReview}/>
-            </div> : <div className='review'>Вы уже оставили отзыв.</div>}
-            {productReview.length === 0 && !user ? (
+            </div> : null}
+            {user && review ===true  ? <div className='review'>Вы уже оставили отзыв.</div> : null}
+            {productReview.length === 0 && user ? (
                     <div className='not_review'>Отзывов нет. Вы можете оставить отзыв.</div>) :
                 (productReview.map(function (item, index) {
                     return (

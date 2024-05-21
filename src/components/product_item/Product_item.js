@@ -9,7 +9,6 @@ import {Link} from "react-router-dom";
 function Product_item(props) {
     const [modalproduct, setModalproduct] = useState(false);
 
-
     return (
         <div className='Product_item'>
             <Modal_product open={modalproduct} setOpen={setModalproduct} product = {props.product}/>

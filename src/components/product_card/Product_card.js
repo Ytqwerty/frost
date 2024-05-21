@@ -67,9 +67,9 @@ function Product_card() {
                                     <div>г.Алматы</div>
                                     <div>г.Астана</div>
                                 </div>
-                                <Button classname={'Button'} text='Купить' onClick={function () {
+                                {product.available ? <Button classname={'Button'} text='Купить' onClick={function () {
                                     setModalproduct(true)
-                                }}/>
+                                }}/> : null}
                             </div>
                         </div>
                     </div>
