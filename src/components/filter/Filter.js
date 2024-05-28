@@ -90,7 +90,6 @@ function Filter(props) {
                     </div>
                     <div className='filter_checkbox'>
                         <Checkbox setStock={props.setStock}/>
-                        <div className="footer_ml">в наличии</div>
                     </div>
                 </div>
                 <div className='filter_footer'>

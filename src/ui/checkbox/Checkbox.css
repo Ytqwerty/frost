@@ -13,3 +13,6 @@
     background-color: #2156BD;
     border: 1px solid #D3D3D3;
 }
+.Checkbox {
+    display:flex;
+}

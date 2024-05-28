@@ -18,8 +18,9 @@ function Checkbox(props) {
     }
 
     return (
-        <div className='Checkbox'>
-            <div onClick={handleChange} className={checked === 1 ? 'checkbox_active' : 'checkbox'}></div>
+        <div className='Checkbox' onClick={handleChange}>
+            <div  className={checked === 1 ? 'checkbox_active' : 'checkbox'}> </div>
+            <div className="footer_ml">в наличии</div>
         </div>
     )
 }

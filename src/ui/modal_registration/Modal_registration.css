@@ -64,12 +64,13 @@
 
 .sign_in {
     align-self: center;
-    margin-top: 18px;
+    margin-top: 28px;
     font-size: 18px;
     line-height: 25px;
     color:#989898;
     font-weight: 400;
     cursor:pointer;
+    margin-bottom: 15px;
 }
 .sign_in:hover {
     text-decoration: underline;
@@ -98,6 +99,7 @@
     margin-bottom: 71px;
 }
 .modal_product_compressor {
+    margin-top: 40px;
     font-weight: 400;
     font-size: 18px;
     line-height: 30px;
@@ -119,11 +121,16 @@
 .modal_count {
     display: flex;
 }
+.stock img {
+    margin-right: 4px;
+}
 .stock {
+    display: flex;
     margin-top: -10px;
     margin-bottom: 10px;
     align-self: center;
     font-size: 20px;
+    color:black;
 }
 .modal_product_minus {
     font-size: 36px;

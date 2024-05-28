@@ -18,7 +18,6 @@ function Product_card_review(props) {
 
     const [review, setReview] = useState(false)
 
-
     useEffect(function () {
         axios.get('https://frost.runtime.kz/api/reviews', {
             params: {

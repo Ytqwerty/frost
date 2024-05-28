@@ -4,6 +4,7 @@ import '../modal_registration/Modal_registration.css'
 import './Modal_product.css'
 import axios from "axios";
 import {useAuth} from "../../contexts/AuthContext";
+import not_check from "../../components/product_card/img/notcheck.svg"
 
 
 function Modal_product(props) {
@@ -59,7 +60,6 @@ function Modal_product(props) {
             <div className="modal_content" onClick={function (event) {
                 event.stopPropagation()
             }}>
-                <div className='recovery'>Товар добавлен в корзину</div>
                 <div className='modal_product_compressor'>{product}</div>
                 {props.product.available ? <div className='modal_product_sum'>
                     <div className='sum'>Укажите количество:</div>
@@ -69,7 +69,7 @@ function Modal_product(props) {
                         <div className='count'>{count}</div>
                         <div onClick={item_increase} className='modal_product_minus'>+</div>
                     </div>
-                </div> : <div className='stock'>Товара нет в наличии</div>}
+                </div> : <div className='stock'><img src={not_check} alt='not_check'></img><div>Нет в наличии</div></div>}
                 {user && props.product.available?
                     <Button classname={loading ? 'loader' : 'Button'} text={!loading ? 'Оформить заказ' : null}
                             onClick={click_item}/> : null }
