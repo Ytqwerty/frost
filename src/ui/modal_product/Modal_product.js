@@ -5,9 +5,19 @@ import './Modal_product.css'
 import axios from "axios";
 import {useAuth} from "../../contexts/AuthContext";
 import not_check from "../../components/product_card/img/notcheck.svg"
+import {useAuthModal} from "../../contexts/AuthModalContext";
 
 
 function Modal_product(props) {
+
+    const {
+        modal_registration,
+        setModal_registration,
+        modal_sign,
+        setModal_sign,
+        modal_product,
+        setModal_product
+    } = useAuthModal();
 
     const [count, setCount] = useState(1);
 
@@ -69,12 +79,19 @@ function Modal_product(props) {
                         <div className='count'>{count}</div>
                         <div onClick={item_increase} className='modal_product_minus'>+</div>
                     </div>
-                </div> : <div className='stock'><img src={not_check} alt='not_check'></img><div>Нет в наличии</div></div>}
-                {user && props.product.available?
+                </div> : <div className='stock'><img src={not_check} alt='not_check'></img>
+                    <div>Нет в наличии</div>
+                </div>}
+                {user && props.product.available ?
                     <Button classname={loading ? 'loader' : 'Button'} text={!loading ? 'Оформить заказ' : null}
-                            onClick={click_item}/> : null }
-                {!user && props.product.available ? <div className='product_authorization'>Чтобы добавить товар в корзину необходимо
-                        авторизоваться</div> : null}
+                            onClick={click_item}/> : null}
+                {!user && props.product.available ?
+                    <div className='product_authorization'>Чтобы добавить товар в корзину необходимо
+                        <span className='product_card_site_button' onClick={
+                            function () {
+                                setModal_sign(true)
+                                setModal_product(false)
+                            }}>авторизоваться</span></div> : null}
                 <div className='sign_in' onClick={() => props.setOpen(false)}>Продолжить выбор товаров</div>
             </div>
         </div>

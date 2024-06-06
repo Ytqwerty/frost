@@ -7,17 +7,18 @@ import Modal_registration from "../../ui/modal_registration/Modal_registration";
 import Modal_sign from "../../ui/modal_sign/Modal_sign";
 import {Link} from "react-router-dom";
 import {useAuth} from "../../contexts/AuthContext";
+import {useAuthModal} from "../../contexts/AuthModalContext";
 
 function Header() {
-    const [modalactive, setModalactive] = useState(false);
-
-    const [modalsign, setModalsign] = useState(false);
 
     const {user, login, logout} = useAuth();
+
+    const { modal_registration, setModal_registration, modal_sign, setModal_sign } = useAuthModal();
+
     return (
         <div className='header'>
-            <Modal_registration open={modalactive} setOpen={setModalactive}/>
-            <Modal_sign open={modalsign} setOpen={setModalsign}/>
+            <Modal_registration open={modal_registration} setOpen={setModal_registration}/>
+            <Modal_sign open={modal_sign} setOpen={setModal_sign}/>
             <div className='container'>
                 <Link to={'/main_page'}>
                     <div className='header_logo'><img src={Frost_logo} alt="Logo"/></div>
@@ -37,11 +38,11 @@ function Header() {
                 <div className='authorization'>
                     {user ? <Link to={'/orders'}><div className='name_link'>{user.firstName + ' ' + user.lastName}</div></Link>
                         : <div onClick={function () {
-                            setModalsign(true)
+                            setModal_sign(true)
                         }}>Вход в личный кабинет</div>}
                     {user ? <div onClick={logout}>Выйти</div>
                         : <div onClick={function () {
-                            setModalactive(true)
+                            setModal_registration(true)
                         }}>Зарегистрироваться</div>}
                 </div>
                 <Link to={'/cart'}>

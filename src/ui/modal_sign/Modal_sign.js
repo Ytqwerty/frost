@@ -2,6 +2,7 @@ import Button from "../button/Button";
 import "../modal_registration/Modal_registration.css";
 import {useEffect, useState} from "react";
 import {useAuth} from "../../contexts/AuthContext";
+import {useAuthModal} from "../../contexts/AuthModalContext";
 
 // `/api/auth/token` (POST)
 // * `username`
@@ -12,34 +13,36 @@ import {useAuth} from "../../contexts/AuthContext";
 
 function Modal_sign(props) {
 
+    const {modal_registration, setModal_registration, modal_sign, setModal_sign} = useAuthModal();
+
     const {user, login, logout} = useAuth();
 
     const [username, setUserName] = useState('');
 
     const [password, setPassword] = useState('');
 
-    const [loading,setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
 
-    const [error,setError] = useState(null)
+    const [error, setError] = useState(null)
 
-    useEffect(function() {
+    useEffect(function () {
         if (user) {
             props.setOpen(false)
         }
-    },[user])
-    useEffect (function() {
-        if (props.open===false) {
+    }, [user])
+    useEffect(function () {
+        if (props.open === false) {
             setUserName('');
             setPassword('')
         }
-    },[props.open])
+    }, [props.open])
 
 
     function sign_in() {
         // login('abc', 'abcv')
         setError('')
         setLoading(true);
-        login(username,password,setLoading,setError);
+        login(username, password, setLoading, setError);
         // axios.post('https://frost.runtime.kz/api/auth/token', {
         //     username: userName,
         //     password: password,
@@ -56,6 +59,7 @@ function Modal_sign(props) {
         //     }
         // })
     }
+
     return (
         <div className={props.open ? 'active_modal' : 'modal'} onClick={function () {
             props.setOpen(false)
@@ -64,15 +68,20 @@ function Modal_sign(props) {
                 event.stopPropagation()
             }}>
                 <div className='modal_sign'>Вход в учётную запись</div>
-                    <input value = {username} disabled={loading} placeholder='Адрес электронной почты' className='address'   onChange={function (event) {
-                        setUserName(event.target.value)
-                    }}/>
-                    <input value = {password} disabled={loading} placeholder='Пароль' className='password' onChange={function (event) {
-                    setPassword(event.target.value)
-                }}/>
+                <input value={username} disabled={loading} placeholder='Адрес электронной почты' className='address'
+                       onChange={function (event) {
+                           setUserName(event.target.value)
+                       }}/>
+                <input value={password} disabled={loading} placeholder='Пароль' className='password'
+                       onChange={function (event) {
+                           setPassword(event.target.value)
+                       }}/>
                 <div className='modal_error'>{error}</div>
-                <Button classname = {loading ? 'loader' : 'Button'} text={loading? null : 'Войти'} onClick={sign_in}/>
-                <div className='sign_in'>Создать новую учётную запись
+                <Button classname={loading ? 'loader' : 'Button'} text={loading ? null : 'Войти'} onClick={sign_in}/>
+                <div className='sign_in' onClick={function () {
+                    setModal_sign(false)
+                    setModal_registration(true)
+                }}>Создать новую учётную запись
                 </div>
             </div>
         </div>

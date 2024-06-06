@@ -3,9 +3,11 @@ import './Modal_registration.css'
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {useAuth} from "../../contexts/AuthContext";
+import {useAuthModal} from "../../contexts/AuthModalContext";
 
 
 function Modal_registration(props) {
+    const { modal_registration, setModal_registration, modal_sign, setModal_sign } = useAuthModal();
 
     const {user, login, logout} = useAuth();
 
@@ -122,7 +124,10 @@ function Modal_registration(props) {
                        value={information.confirm_password} onChange={OnChange_confirm_password}/>
                 <div className='modal_error'>{errorPassword === '' ? error.password : errorPassword}</div>
                 <Button classname = {'Button'} text='Зарегистрироваться' onClick={userReg}/>
-                <div className='sign_in'>Войти в существующую учётную запись</div>
+                <div className='sign_in' onClick={function() {
+                    setModal_registration(false)
+                    setModal_sign(true)
+                }}>Войти в существующую учётную запись</div>
             </div>
         </div>
 

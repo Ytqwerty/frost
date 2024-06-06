@@ -5,12 +5,14 @@ import {useAuth} from "../../contexts/AuthContext";
 import Button from "../../ui/button/Button";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import {useAuthModal} from "../../contexts/AuthModalContext";
 
 function Product_card_review(props) {
 
     const [productReview, setProductReview] = useState([])
 
-    const [modalactive, setModalactive] = useState(false)
+    const { modal_registration, setModal_registration, modal_sign, setModal_sign } = useAuthModal();
+
 
     const {user} = useAuth();
 
@@ -47,14 +49,13 @@ function Product_card_review(props) {
             })
         }
     }
-
     return (
         <div className="Review">
-            <Modal_sign open={modalactive} setOpen={setModalactive}/>
+            <Modal_sign open={modal_sign} setOpen={setModal_sign}/>
             <div className="product_card_review">Отзывы</div>
             {!user ? <div className="product_card_site">
                 <div>Чтобы оставить отзыв</div>
-                <div className='product_card_site_button' onClick={() => setModalactive(true)}>войдите на сайт</div>
+                <div className='product_card_site_button' onClick={() => setModal_sign(true)}>войдите на сайт</div>
             </div> : null}
             {user && review === false ? <div className='form_review'>
                 <div className='review'>Вы можете оставить свой отзыв, заполнив форму ниже.</div>

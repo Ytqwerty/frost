@@ -8,6 +8,7 @@ import Cart from "./components/cart/Cart";
 import {AuthContextProvider} from "./contexts/AuthContext";
 import Delivery from "./components/delivery/Delivery";
 import Orders from "./userAccount/orders/Orders";
+import {AuthModalProvider} from "./contexts/AuthModalContext";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +32,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <AuthContextProvider>
+        <AuthModalProvider>
         <RouterProvider router={router}/>
+        </AuthModalProvider>
     </AuthContextProvider>
 );
