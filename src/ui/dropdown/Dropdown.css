@@ -55,6 +55,7 @@
 .active_name {
     background:#2156BD ;
     height: 35px;
+    color:#ffffff!important;
 }
 .name {
     height: 35px;

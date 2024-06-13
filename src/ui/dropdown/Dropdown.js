@@ -16,14 +16,15 @@ function Dropdown(props) {
     }, [props.elements])
     //
     useEffect(function () {
-       const click_Dropdown = (event) =>  {
+        const click_Dropdown = (event) => {
             if (!dropDown.current.contains(event.target)) {
-            setOpen (false)}
-       }
-       document.addEventListener('click',click_Dropdown)
+                setOpen(false)
+            }
+        }
+        document.addEventListener('click', click_Dropdown)
 
         return () => {
-           document.removeEventListener('click',click_Dropdown)
+            document.removeEventListener('click', click_Dropdown)
         }
     }, [])
 
@@ -40,20 +41,24 @@ function Dropdown(props) {
         if (props.click !== undefined) props.click(0);
     }
 
-
     return (
-        <div className='Dropdown' ref={dropDown} >
+        <div className='Dropdown' ref={dropDown}>
             <div className={open ? 'active_check' : 'check'} onClick={click_Drop}>{name}</div>
             <div className={open ? 'active_items' : 'items'}>
-                <div onClick={click_name} className={props.name === name ? 'active_name' : 'name'}>{props.name}</div>
-                {elements.map(function (item) {
-                    return (
-                        <div className={item.name === name ? 'active_name' : 'name'}
-                             onClick={function () {
-                                 click_select(item)
-                             }} key={item.id}>{item.name}</div>
-                    )
-                })}
+                {props.name !== name ? <div onClick={click_name}
+                                            className={props.name === name ? 'active_name' : 'name'}>{props.name}</div> : null}
+                {
+                    elements.map(function (item) {
+                        if (item.name !== name) {
+                            return (
+                                <div className='name'
+                                     onClick={function () {
+                                         click_select(item)
+                                     }} key={item.id}>{item.name !== name ? item.name : null}</div>
+                            )
+                        }
+                    })
+                }
             </div>
         </div>
     )
